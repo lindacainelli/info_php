@@ -14,14 +14,21 @@ $horaInicial = $arrHora [0];
 $minutoInicial = $arrHora [1];
 $segundoInicial = $arrHora [2];
 
+$horaEmSegundos = $horaInicial * 3600;
+$minutosEmSegundos = $minutoInicial * 60;
+$totalInicialEmSegundos = $horaEmSegundos + $minutosEmSegundos + $segundoInicial; 
+
 $arrHora = explode(";", $horaFinal);
 
 $horaFinal = $arrHora [0];
 $minutoFinal = $arrHora [1];
 $segundoFinal = $arrHora [2];
 
-$horaEmSegundos = $hora * 60;
-$horaEmSegundos = $minutos * 60;
+$horaFinalEmSegundos = $horaFinal * 3600;
+$minutosFinalEmSegundos = $minutoFinal * 60;
 
-$totalInicialEmSegundos = $horaEmSegundos + $minutosEmSegundos + $segundos; 
+$totalFinalEmSegundos = $horaFinalEmSegundos + $minutosFinalEmSegundos + $segundoFinal; 
 
+$tempoDeJogo = $totalFinalEmSegundos - $totalInicialEmSegundos;
+
+echo "tempo jogo {$tempoDeJogo}";
